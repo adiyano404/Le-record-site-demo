@@ -1,5 +1,3 @@
-# Le-record-site-demo
-Le record - Guinee land registry demo
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,8 +39,8 @@ Le record - Guinee land registry demo
         </nav>
         <div class="flex items-center gap-2">
           <span id="adminBadge" class="hidden sm:inline-flex items-center text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/50 text-emerald-300 font-semibold tracking-tight uppercase">Admin</span>
-          <div class="hidden sm:flex items-center gap-1 text-xs border border-slate-800 rounded-full px-1.5 py-0.5 bg-slate-900">
-            <span class="px-1 text-slate-400" data-i18n="common.language">Language</span>
+          <div class="flex items-center gap-1 text-xs border border-slate-800 rounded-full px-1.5 py-0.5 bg-slate-900">
+            <span class="hidden sm:inline px-1 text-slate-400" data-i18n="common.language">Language</span>
             <button id="lang-en" class="px-2 py-0.5 rounded-full text-emerald-300 bg-emerald-500/15 border border-emerald-500/40 text-[11px] font-medium">EN</button>
             <button id="lang-fr" class="px-2 py-0.5 rounded-full text-slate-400 hover:text-emerald-300 text-[11px] font-medium">FR</button>
           </div>
@@ -1797,8 +1795,8 @@ Le record - Guinee land registry demo
               <span class="text-[11px] text-slate-400">${tDiv.prefectureTableTitle}</span>
             </div>
             <div class="overflow-x-auto">
-              <table class="min-w-full text-[11px] text-left text-slate-200">
-                <thead class="text-slate-400 border-b border-slate-800">
+              <table class="min-w-full text-[11px] text-left">
+                <thead class="bg-slate-900 text-slate-200 border-b border-slate-800">
                   <tr>
                     <th class="py-1 pr-3">${tCommon.prefectureCode}</th>
                     <th class="py-1 pr-3">${tCommon.prefecture}</th>
@@ -1811,10 +1809,10 @@ Le record - Guinee land registry demo
             .slice()
             .sort((a, b) => a.id - b.id)
             .forEach((p) => {
-              html += `<tr class="border-b border-slate-900/60">
-                  <td class="py-1 pr-3 text-slate-200">${p.code}</td>
-                  <td class="py-1 pr-3">${p.name}</td>
-                  <td class="py-1 pr-3 text-slate-300">${p.administrative_region}</td>
+              html += `<tr class="border-b border-slate-900/60 bg-slate-950/60">
+                  <td class="py-1 pr-3 text-slate-100">${p.code}</td>
+                  <td class="py-1 pr-3 text-slate-100">${p.name}</td>
+                  <td class="py-1 pr-3 text-slate-200">${p.administrative_region}</td>
                   ${admin
                     ? `<td class="py-1 pr-3 text-right"><button type="button" data-pref-code="${p.code}" class="js-edit-pref text-emerald-300 hover:text-emerald-200 underline decoration-emerald-500/70">${tAdmin.editPrefectureButton}</button></td>`
                     : ""}
